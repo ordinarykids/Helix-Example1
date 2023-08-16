@@ -23,13 +23,13 @@ const VideoEmbed = ({ url }: VideoEmbedProps) => (
   <div className={styles.container}>
     <div className={styles.content}>
       <div className={styles.videoWrap}>
-        <ReactPlayer
+        {/* <ReactPlayer
           url={url}
           className={styles.videoPlayer}
           width='100%'
           height='100%'
           controls
-        />
+        /> */}
       </div>
     </div> 
   </div>
