@@ -31,7 +31,7 @@ const VideoEmbed = ({ url }: VideoEmbedProps) => (
           controls
         />
       </div>
-    </div>
+    </div> 
   </div>
 )
 
