@@ -25,7 +25,7 @@ function Sphere() {
       if (window.innerWidth < 800) {
         setGlobePosition([1, 5, 4])
       } else {
-        setGlobePosition([-5, -5, 2])
+        setGlobePosition([-9, 0, 20])
       }
     }
     window.addEventListener('scroll', onScroll)
@@ -37,9 +37,9 @@ function Sphere() {
 
   return (
     <div id='interactiveSphere' className={styles.wrap} ref={sphereWrapRef}>
-      <Canvas shadows camera={{ position: [1, 1, 44], fov: 300 }} onCreated={((state) => ScrollTrigger.refresh())}>
+      <Canvas shadows camera={{ position: [1, -1, 44], fov: 300 }} onCreated={((state) => ScrollTrigger.refresh())}>
         <ambientLight intensity={1} />
-        <HelixSphere scale={90} position={globePosition} />
+        <HelixSphere scale={5} position={globePosition} />
       </Canvas>
     </div>
   )

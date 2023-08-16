@@ -72,13 +72,13 @@ export default function HubspotForm({ header, text, hubspotFormId }: HubspotForm
           </div>
         )}
         <div className={styles.hsFormWrap}>
-          <ReactHubspotForm
+          {/* <ReactHubspotForm
             // eslint-disable-next-line
             // @ts-ignore
             portalId='21375987'
             formId={hubspotFormId}
             onReady={observeValueChanges}
-          />
+          /> */}
         </div>
       </div>
     </section>
