@@ -2,7 +2,7 @@
 [Next.js](https://nextjs.org/docs) code for corporate website, including [Storybook](https://storybook.js.org/docs/react/get-started/install/) for documenting styles and components.
 
 ## Getting Started
-
+ 
 1. After cloning this repository, if you use `nvm` run `nvm install` to use and, if needed, install the version of node specified in `.nvmrc`. Or otherwise use the specified node version.
 
 2. Run `yarn` to install dependencies.
