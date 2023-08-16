@@ -5,11 +5,21 @@
 import * as THREE from 'three'
 import { Suspense, useEffect, useLayoutEffect, useState, useRef } from 'react'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import { ScrollControls, Sky, useScroll, useGLTF, useAnimations } from '@react-three/drei'
+import { ScrollControls, Sky, OrbitControls,  useScroll, useGLTF, useAnimations } from '@react-three/drei'
 import CameraControls from 'camera-controls'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { gsap } from 'gsap'
 import styles from './InteractiveSphere.module.scss'
+
+extend({ OrbitControls })
+
+const Controls = () => {
+  const { camera, gl } = useThree()
+  const ref = useRef()
+  useFrame(() => ref.current.update())
+  return <OrbitControls enableZoom={false} ref={ref} args={[camera, gl.domElement]} />
+}
+
 
 
 function Sphere() {
@@ -38,6 +48,7 @@ function Sphere() {
   return (
     <div id='interactiveSphere' className={styles.wrap} ref={sphereWrapRef}>
       <Canvas shadows camera={{ position: [1, 1, 44], fov: 300 }} onCreated={((state) => ScrollTrigger.refresh())}>
+        <Controls />
         <ambientLight intensity={1} />
         <HelixSphere scale={90} position={globePosition} />
       </Canvas>
